@@ -2137,10 +2137,12 @@ zoom(const Arg *arg)
 int
 main(int argc, char *argv[])
 {
+	if (argc == 3 && !strcmp("-d", argv[1]))
+		printf("starting on display: :%d\n", atoi(argv[2]));
 	if (argc == 2 && !strcmp("-v", argv[1]))
 		die("dwm-"VERSION);
-	else if (argc != 1)
-		die("usage: dwm [-v]");
+	if (argc == 2 && !strcmp("-h", argv[1]))
+		die("usage: dwm [-vdh]");
 	if (!setlocale(LC_CTYPE, "") || !XSupportsLocale())
 		fputs("warning: no locale support\n", stderr);
 	if (!(dpy = XOpenDisplay(NULL)))
