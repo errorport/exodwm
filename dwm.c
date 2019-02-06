@@ -30,6 +30,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <time.h>
 #include <X11/cursorfont.h>
 #include <X11/keysym.h>
 #include <X11/Xatom.h>
@@ -267,6 +268,13 @@ static Display *dpy;
 static Drw *drw;
 static Monitor *mons, *selmon;
 static Window root, wmcheckwin;
+
+/* exo extension */
+
+/* time variables display */
+time_t rawtime;
+struct tm * timeinfo;
+/* EOF exo estension */
 
 /* configuration, allows nested code to access above variables */
 #include "config.h"
@@ -705,8 +713,8 @@ drawbar(Monitor *m)
 	if (m == selmon) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		sw = TEXTW(stext) - lrpad + 5; /* 2px right padding */
-		//drw_text(drw, m->ww - sw, 0, sw, bh, 0, stext, 0);
-		drw_text(drw, m->ww - sw, 0, sw, bh, 0, "...", 0);
+		drw_text(drw, m->ww - sw, 0, sw, bh, 0, stext, 0);
+		//drw_text(drw, m->ww - sw, 0, sw, bh, 0, "...", 0);
 	}
 
 	for (c = m->clients; c; c = c->next) {
@@ -1988,8 +1996,15 @@ updatesizehints(Client *c)
 void
 updatestatus(void)
 {
-	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
-		strcpy(stext, "dwm-"VERSION);
+	/* updating time */
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext))) {
+//		strcpy(stext, "dwm-"VERSION);
+//		strcpy(stext, " ");
+		strcpy(stext, " ");
+//		strcpy(stext, ctime(&rawtime));
+	}
 	drawbar(selmon);
 }
 
