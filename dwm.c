@@ -30,6 +30,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <time.h>
 #include <X11/cursorfont.h>
 #include <X11/keysym.h>
 #include <X11/Xatom.h>
@@ -268,6 +269,13 @@ static Display *dpy;
 static Drw *drw;
 static Monitor *mons, *selmon;
 static Window root, wmcheckwin;
+
+/* exo extension */
+
+/* time variables display */
+time_t rawtime;
+struct tm * timeinfo;
+/* EOF exo estension */
 
 /* configuration, allows nested code to access above variables */
 #include "config.h"
@@ -1997,8 +2005,15 @@ updatesizehints(Client *c)
 void
 updatestatus(void)
 {
-	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
-		strcpy(stext, "dwm-"VERSION);
+	/* updating time */
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext))) {
+//		strcpy(stext, "dwm-"VERSION);
+//		strcpy(stext, " ");
+		strcpy(stext, " ");
+//		strcpy(stext, ctime(&rawtime));
+	}
 	drawbar(selmon);
 }
 
