@@ -28,6 +28,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <pthread.h> 
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <time.h>
@@ -2011,7 +2012,7 @@ updatestatus(void)
 	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext))) {
 //		strcpy(stext, "dwm-"VERSION);
 //		strcpy(stext, " ");
-		strcpy(stext, " ");
+		strcpy(stext, "");
 //		strcpy(stext, ctime(&rawtime));
 	}
 	drawbar(selmon);
@@ -2164,6 +2165,8 @@ main(int argc, char *argv[])
 		die("dwm: cannot open display");
 	checkotherwm();
 	setup();
+	system("~/gifbg.sh ~/gifbg/001.gif &");
+	system("~/dev/dwm/exostatus.sh &");
 #ifdef __OpenBSD__
 	if (pledge("stdio rpath proc exec", NULL) == -1)
 		die("pledge");
