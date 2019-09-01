@@ -9,6 +9,6 @@ update_text()
 
 while true; do
 	update_text
-	xsetroot -name "$_text"
-	sleep 1
+#	xsetroot -name "$_text"
+#	sleep 1
 done
