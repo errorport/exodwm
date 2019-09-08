@@ -2267,7 +2267,7 @@ main(int argc, char *argv[])
 	checkotherwm();
 	setup();
 	//system("gifbg.sh gifbg/001.gif &");
-	system("~/dev/dwm/exostatus.sh &");
+  system(statcmd);
 #ifdef __OpenBSD__
 	if (pledge("stdio rpath proc exec", NULL) == -1)
 		die("pledge");
