@@ -62,6 +62,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "/home/bencsikg/dev/st/st", NULL };
 static const char *lockcmd[]  = { "i3lock", "-n", "-i", "/home/bencsikg/bg.png", NULL };
+static const char statcmd[]    = "$HOME/dev/exostat/exostat &";
 //static const char *termcmd[]  = { "urxvt", NULL };
 
 static Key keys[] = {
