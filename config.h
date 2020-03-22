@@ -8,11 +8,11 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "ProFontForPowerline:16:pixelsize=15:antialias=true:autohint=true" };
 // static const char font[]            = "-*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*"; // stolen from dothare.it
 static const char dmenufont[]       = "ProFontForPowerline:16:pixelsize=15:antialias=true:autohint=true";
-static const char col_gray1[]       = "#0075c9"; //"#de0047";
-static const char col_gray2[]       = "#acc9ce";
-static const char col_gray3[]       = "#230a24";
+static const char col_gray1[]       = "#ffcc00";
+static const char col_gray2[]       = "#ffffff";
+static const char col_gray3[]       = "#000000";
 static const char col_gray4[]       = "#36baff";
-static const char col_cyan[]        = "#230a24";
+static const char col_cyan[]        = "#000000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
