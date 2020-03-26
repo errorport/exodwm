@@ -151,6 +151,7 @@ static void arrangemon(Monitor *m);
 static void attach(Client *c);
 static void attachstack(Client *c);
 static void buttonpress(XEvent *e);
+static void change_kbl(void);
 static void checkotherwm(void);
 static void cleanup(void);
 static void cleanupmon(Monitor *mon);
@@ -270,13 +271,6 @@ static Display *dpy;
 static Drw *drw;
 static Monitor *mons, *selmon;
 static Window root, wmcheckwin;
-
-/* exo extension */
-
-/* time variables display */
-time_t rawtime;
-struct tm * timeinfo;
-/* EOF exo estension */
 
 /* configuration, allows nested code to access above variables */
 #include "config.h"
@@ -463,6 +457,13 @@ buttonpress(XEvent *e)
 		if (click == buttons[i].click && buttons[i].func && buttons[i].button == ev->button
 		&& CLEANMASK(buttons[i].mask) == CLEANMASK(ev->state))
 			buttons[i].func(click == ClkTagBar && buttons[i].arg.i == 0 ? &arg : &buttons[i].arg);
+}
+
+void
+change_kbl(void)
+{
+  system(chkblcmd);
+  printf("Change!\n");
 }
 
 void
@@ -2101,14 +2102,8 @@ updatesizehints(Client *c)
 void
 updatestatus(void)
 {
-	/* updating time */
-	time(&rawtime);
-	timeinfo = localtime(&rawtime);
 	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext))) {
 //		strcpy(stext, "dwm-"VERSION);
-//		strcpy(stext, " ");
-		strcpy(stext, "");
-//		strcpy(stext, ctime(&rawtime));
 	}
 	drawbar(selmon);
 }
