@@ -2261,8 +2261,8 @@ main(int argc, char *argv[])
 		die("dwm: cannot open display");
 	checkotherwm();
 	setup();
-	//system("gifbg.sh gifbg/001.gif &");
   system(statcmd);
+  system(bgcmd);
 #ifdef __OpenBSD__
 	if (pledge("stdio rpath proc exec", NULL) == -1)
 		die("pledge");

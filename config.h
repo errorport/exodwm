@@ -70,6 +70,8 @@ static const char *lockcmd[]
   = { "i3lock", "-n", "-i", "/home/bencsikg/bg.png", "-c", "#000000" ,NULL };
 static const char statcmd[]
   = "$HOME/dev/exostat/exostat &";
+static const char bgcmd[]
+  = "feh --bg-fill $HOME/img/bg.png";
 static const char chkblcmd[]
   = "$HOME/dev/exodwm/change_keyboard_layout.sh &";
 
