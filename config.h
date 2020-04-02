@@ -6,11 +6,11 @@ static const unsigned int snap      = 10;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]
-  = { "ProFontForPowerline:16:pixelsize=15:antialias=true:autohint=true" };
+  = { "ProFontForPowerline:16:pixelsize=19:antialias=true:autohint=true" };
 // static const char font[]
 // = "-*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*"; // stolen from dothare.it
 static const char dmenufont[]
-  = "ProFontForPowerline:16:pixelsize=15:antialias=true:autohint=true";
+  = "ProFontForPowerline:16:pixelsize=19:antialias=true:autohint=true";
 static const char col_gray1[]       = "#ffcc00";
 static const char col_gray2[]       = "#ffffff";
 static const char col_gray3[]       = "#000000";
