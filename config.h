@@ -67,7 +67,7 @@ static const char *dmenucmd[]
 static const char *termcmd[]
   = { "/home/bencsikg/dev/exost/st", NULL};
 static const char *lockcmd[]
-  = { "i3lock", "-n", "-i", "/home/bencsikg/img/bg_1080.png", "-c", "#000000", NULL};
+  = { "/home/bencsikg/dev/exodwm/screen_lock.sh", NULL};
 static const char statcmd[]
   = "$HOME/dev/exostat/exostat &";
 static const char bgcmd[]
