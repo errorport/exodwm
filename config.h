@@ -63,11 +63,11 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]
-  = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+  = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL};
 static const char *termcmd[]
-  = { "/home/bencsikg/dev/exost/st", NULL };
+  = { "/home/bencsikg/dev/exost/st", NULL};
 static const char *lockcmd[]
-  = { "i3lock", "-n", "-i", "/home/bencsikg/bg.png", "-c", "#000000" ,NULL };
+  = { "i3lock", "-n", "-i", "/home/bencsikg/img/bg_1080.png", "-c", "#000000", NULL};
 static const char statcmd[]
   = "$HOME/dev/exostat/exostat &";
 static const char bgcmd[]
