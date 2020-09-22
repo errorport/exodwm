@@ -6,11 +6,11 @@ static const unsigned int snap      = 10;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]
-  = { "ProFontForPowerline:16:pixelsize=19:antialias=true:autohint=true" };
+  = { "ProFontForPowerline:20:pixelsize=20:antialias=true:autohint=true" };
 // static const char font[]
 // = "-*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*"; // stolen from dothare.it
 static const char dmenufont[]
-  = "ProFontForPowerline:16:pixelsize=19:antialias=true:autohint=true";
+  = "ProFontForPowerline:20:pixelsize=20:antialias=true:autohint=true";
 static const char col_gray1[]       = "#ffcc00";
 static const char col_gray2[]       = "#ffffff";
 static const char col_gray3[]       = "#000000";
@@ -23,8 +23,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-const char ws1[] = {"1 "};
-const char ws2[] = {"2 "};
+const char ws1[] = {""};
+const char ws2[] = {""};
 static const char* tags[] = { ws1, ws2, "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
@@ -44,9 +44,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "",      tile },    /* first entry is default */
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "",      monocle },
 };
 
 /* key definitions */
@@ -76,7 +76,7 @@ static const char chkblcmd[]
   = "$HOME/dev/exodwm/change_keyboard_layout.sh &";
 
 static Key keys[] = {
-	/* modifier                     key        function        argument */ 
+	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_l,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
