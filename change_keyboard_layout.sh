@@ -2,7 +2,7 @@
 # Simply returns keyboard layout
 # 2 letters, uppercase.
 
-layouts=(us hu)
+layouts=(us hu se)
 
 layout_size=${#layouts[@]}
 
