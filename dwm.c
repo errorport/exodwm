@@ -821,7 +821,7 @@ drawbar(Monitor *m)
 
 	/* draw status first so it can be overdrawn by tags later */
 	if (m == selmon) { /* status is only drawn on selected monitor */
-		sw = m->ww - drawstatusbar(m, bh, stext);
+		tw = m->ww - drawstatusbar(m, bh, stext);
 	}
 
 	for (c = m->clients; c; c = c->next) {
@@ -2109,7 +2109,7 @@ void
 updatestatus(void)
 {
 	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext))) {
-//		strcpy(stext, "dwm-"VERSION);
+		strcpy(stext, "dwm-"VERSION);
 	}
 	drawbar(selmon);
 }
