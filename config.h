@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include "exocolor/color_config.h"
+
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 10;       /* snap pixel */
@@ -9,11 +11,11 @@ static const char *fonts[]
   = { "ProFontForPowerline:20:pixelsize=20:antialias=true:autohint=true" };
 static const char dmenufont[]
   = "ProFontForPowerline:20:pixelsize=20:antialias=true:autohint=true";
-static const char background_1[]        = "#000000";
-static const char background_2[]        = "#000000";
-static const char border_1[]            = "#ffcc00";
-static const char fg_base[]             = "#ffcc00";
-static const char fg_highlight[]        = "#00aedd";
+static const char background_1[]        = BLACK_DARK;
+static const char background_2[]        = BLACK_DARK;
+static const char border_1[]            = YELLOW_LIGHT;
+static const char fg_base[]             = YELLOW_LIGHT;
+static const char fg_highlight[]        = CYAN_DARK;
 static const char *colors[][3]          = {
 	/*               fg             bg              border   */
 	[SchemeNorm] = { fg_base,       background_1,   border_1 },
@@ -31,7 +33,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-//	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  ws2,       NULL,       1 << 8,       0,           -1 },
 };
 

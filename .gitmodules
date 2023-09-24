@@ -1,0 +1,3 @@
+[submodule "exocolor"]
+	path = exocolor
+	url = git@github.com:errorport/exocolor.git
