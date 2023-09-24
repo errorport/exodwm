@@ -7,19 +7,17 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]
   = { "ProFontForPowerline:20:pixelsize=20:antialias=true:autohint=true" };
-// static const char font[]
-// = "-*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*"; // stolen from dothare.it
 static const char dmenufont[]
   = "ProFontForPowerline:20:pixelsize=20:antialias=true:autohint=true";
-static const char col_gray1[]       = "#ffcc00";
-static const char col_gray2[]       = "#ffffff";
-static const char col_gray3[]       = "#000000";
-static const char col_gray4[]       = "#36baff";
-static const char col_cyan[]        = "#000000";
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+static const char background_1[]        = "#000000";
+static const char background_2[]        = "#000000";
+static const char border_1[]            = "#ffcc00";
+static const char fg_base[]             = "#ffcc00";
+static const char fg_highlight[]        = "#00aedd";
+static const char *colors[][3]          = {
+	/*               fg             bg              border   */
+	[SchemeNorm] = { fg_base,       background_1,   border_1 },
+	[SchemeSel]  = { fg_highlight,  background_2,   background_2 },
 };
 
 /* tagging */
@@ -64,7 +62,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]
-  = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL};
+  = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", background_1, "-nf", fg_base, "-sb", fg_highlight, "-sf", background_1, NULL};
 static const char *termcmd[]
   = { "/home/bencsikg/dev/exost/st", NULL};
 static const char *lockcmd[]
