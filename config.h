@@ -11,15 +11,10 @@ static const char *fonts[]
   = { "ProFontForPowerline:20:pixelsize=20:antialias=true:autohint=true" };
 static const char dmenufont[]
   = "ProFontForPowerline:20:pixelsize=20:antialias=true:autohint=true";
-static const char background_1[]        = BLACK_DARK;
-static const char background_2[]        = BLACK_DARK;
-static const char border_1[]            = YELLOW_LIGHT;
-static const char fg_base[]             = YELLOW_LIGHT;
-static const char fg_highlight[]        = CYAN_DARK;
 static const char *colors[][3]          = {
 	/*               fg             bg              border   */
-	[SchemeNorm] = { fg_base,       background_1,   border_1 },
-	[SchemeSel]  = { fg_highlight,  background_2,   background_2 },
+	[SchemeNorm] = { YELLOW_LIGHT,  BLACK_DARK,     YELLOW_LIGHT },
+	[SchemeSel]  = { CYAN_DARK,     BLACK_DARK,     BLACK_DARK },
 };
 
 /* tagging */
@@ -63,17 +58,17 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]
-  = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", background_1, "-nf", fg_base, "-sb", fg_highlight, "-sf", background_1, NULL};
+  = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", BLACK_DARK, "-nf", YELLOW_LIGHT, "-sb", CYAN_DARK, "-sf", BLACK_DARK, NULL};
 static const char *termcmd[]
-  = { "/home/bencsikg/dev/exost/st", NULL};
+  = { "st", NULL};
 static const char *lockcmd[]
-  = { "/home/bencsikg/dev/exodwm/screen_lock.sh", NULL};
+  = { "screen_lock.sh", NULL};
 static const char statcmd[]
-  = "$HOME/dev/exostat/exostat &";
+  = {"exostat &"};
 static const char bgcmd[]
   = "feh --bg-fill $HOME/img/bg.png";
 static const char chkblcmd[]
-  = "$HOME/dev/exodwm/change_keyboard_layout.sh &";
+  = "change_keyboard_layout.sh &";
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
