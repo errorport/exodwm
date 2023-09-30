@@ -63,8 +63,8 @@ static const char *termcmd[]
   = { "st", NULL};
 static const char *lockcmd[]
   = { "screen_lock.sh", NULL};
-static const char statcmd[]
-  = {"exostat &"};
+static char statcmd[] = {"exostat"};
+static char fullstatcmd[64] = {""};
 static const char bgcmd[]
   = "feh --bg-fill $HOME/img/bg.png";
 static const char chkblcmd[]

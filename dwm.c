@@ -211,6 +211,7 @@ static void seturgent(Client *c, int urg);
 static void showhide(Client *c);
 static void sigchld(int unused);
 static void spawn(const Arg *arg);
+static void spawn_statusbar();
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void tile(Monitor *);
@@ -1771,6 +1772,15 @@ spawn(const Arg *arg)
 }
 
 void
+spawn_statusbar()
+{
+	// Spawn exostat with updated color
+	sprintf(fullstatcmd, "%s \\%s &", statcmd, CYAN_DARK);
+	printf("\n", fullstatcmd, "\n");
+	system(fullstatcmd);
+}
+
+void
 tag(const Arg *arg)
 {
 	if (selmon->sel && arg->ui & TAGMASK) {
@@ -2261,8 +2271,8 @@ main(int argc, char *argv[])
 		die("dwm: cannot open display");
 	checkotherwm();
 	setup();
-  system(statcmd);
-  system(bgcmd);
+	spawn_statusbar();
+	system(bgcmd);
 #ifdef __OpenBSD__
 	if (pledge("stdio rpath proc exec", NULL) == -1)
 		die("pledge");
